@@ -1,5 +1,6 @@
 import React from 'react';
 import NavTop from '../../component/navTop';
+import NumberFormat from 'react-number-format';
 
 function CicilanAdd(props){
     const [tanggal_cicil, setTanggalCicil] = React.useState('')
@@ -27,12 +28,11 @@ function CicilanAdd(props){
                     </div>
                     <div className="form-group">
                         <label htmlFor="nominal">Nominal</label>
-                        <input 
-                            type="number"
+                        <NumberFormat
                             className="form-control"
-                            id="nominal" 
-                            value={nominal}
-                            onChange={e => setNominal(e.target.value)}    
+                            thousandSeparator={true}
+                            prefix={"Rp "}
+                            onValueChange={(v) => setNominal(v.floatValue)}
                         />
                     </div>
                     <div className="form-group">
