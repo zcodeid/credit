@@ -1,0 +1,41 @@
+.top-menu {
+  top: 0;
+  margin: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  position: fixed;
+  font-size: 14px;
+  background: #fff;
+  justify-content: space-around;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  &-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.top-menu-back {
+  top: 0;
+  margin: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  position: fixed;
+  font-size: 14px;
+  background: #fff;
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  &-action {
+    margin: 0 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

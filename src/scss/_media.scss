@@ -1,0 +1,27 @@
+@media (min-width: $breakpoint-phone) {
+  body {
+    background: #e4e3e3fa;
+  }
+  #root {
+    width: 100%;
+    max-width: $breakpoint-phone;
+    min-height: 100vh;
+    margin: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  .bottom-menu {
+    max-width: $breakpoint-phone;
+  }
+  .top-menu {
+    max-width: $breakpoint-phone;
+  }
+  .top-menu-back {
+    max-width: $breakpoint-phone;
+  }
+  .fab {
+    position: fixed;
+    display: flex;
+    right: 10em;
+    bottom: 6em;
+  }
+}

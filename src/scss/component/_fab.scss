@@ -1,0 +1,29 @@
+.fab {
+  position: fixed;
+  display: flex;
+  right: 1.5em;
+  bottom: 6em;
+  span {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 3px 6px rgba(41, 26, 26, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    &:hover {
+      cursor: pointer;
+      background: #faf8f8;
+    }
+    svg {
+      font-weight: bold;
+      color: theme-color("primary");
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+}

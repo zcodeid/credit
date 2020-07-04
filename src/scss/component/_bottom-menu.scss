@@ -1,0 +1,34 @@
+.bottom-menu {
+  margin: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  font-size: 14px;
+  background: #fff;
+  justify-content: space-around;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  li {
+    list-style: none;
+    .active {
+      color: theme-color("primary");
+    }
+    a {
+      padding: 10px 0;
+      color: black;
+      display: block;
+      &:hover {
+        text-decoration: none;
+        color: theme-color("primary");
+      }
+      svg {
+        width: 1.3em;
+        height: 1.3em;
+      }
+      span {
+        font-size: 11px;
+      }
+    }
+  }
+}

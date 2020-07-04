@@ -1,0 +1,22 @@
+.home-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  &-item {
+    max-width: 4em;
+    line-height: 0.8em;
+    margin: auto;
+    text-align: center;
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+    &-text {
+      font-size: 11px;
+    }
+    &:hover {
+      cursor: pointer;
+      color: theme-color("primary");
+    }
+  }
+}
