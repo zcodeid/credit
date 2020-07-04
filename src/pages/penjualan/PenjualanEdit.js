@@ -1,6 +1,7 @@
 import React from 'react';
 import NavTop from '../../component/navTop';
 import CreatableSelect from "react-select/creatable";
+import NumberFormat from "react-number-format";
 
 function PenjualanEdit(props){
     const [tanggal_penjualan, setTanggalPenjualan] = React.useState('')
@@ -37,22 +38,20 @@ function PenjualanEdit(props){
                     </div>
                     <div className="form-group">
                         <label htmlFor="harga_beli">Harga Beli</label>
-                        <input 
-                            type="number"
+                        <NumberFormat
                             className="form-control"
-                            id="harga_beli" 
-                            value={harga_beli}
-                            onChange={e => setHargaBeli(e.target.value)}
+                            thousandSeparator={true}
+                            prefix={"Rp "}
+                            onValueChange={(v) => setHargaBeli(v.floatValue)}
                         />
                     </div>
                     <div className="form-group">
                         <label htmlFor="dp">DP</label>
-                        <input 
-                            type="number" 
-                            className="form-control" 
-                            id="dp" 
-                            value={dp}
-                            onChange={e => setDp(e.target.value)}    
+                        <NumberFormat
+                            className="form-control"
+                            thousandSeparator={true}
+                            prefix={"Rp "}
+                            onValueChange={(v) => setDp(v.floatValue)}
                         />
                     </div>
                     <div className="form-group">
