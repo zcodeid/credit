@@ -1,5 +1,6 @@
 import React from 'react';
 import NavTop from '../../component/navTop';
+import NumberFormat from "react-number-format";
 
 function CustomerEdit(props){
     const [nik, setNik] = React.useState('');
@@ -121,22 +122,20 @@ function CustomerEdit(props){
                     </div>
                     <div className="form-group">
                         <label htmlFor="penghasilan">Penghasilan</label>
-                        <input 
-                            type="number"
-                            className="form-control" 
-                            id="penghasilan" 
-                            value={penghasilan}
-                            onChange={e => setPenghasilan(e.target.value)}    
+                        <NumberFormat
+                            className="form-control"
+                            thousandSeparator={true}
+                            prefix={"Rp "}
+                            onValueChange={(v) => setPenghasilan(v.floatValue)}
                         />
                     </div>
                     <div className="form-group">
                         <label htmlFor="pengeluaran">Pengeluaran</label>
-                        <input 
-                            type="number"
+                        <NumberFormat
                             className="form-control"
-                            id="pengeluaran"
-                            value={pengeluaran}
-                            onChange={e => setPengeluaran(e.target.value)}
+                            thousandSeparator={true}
+                            prefix={"Rp "}
+                            onValueChange={(v) => setPengeluaran(v.floatValue)}
                         />
                     </div>
                     <div className="form-group">
