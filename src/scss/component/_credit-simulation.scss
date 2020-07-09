@@ -1,0 +1,18 @@
+.crsi {
+  &-highlight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-label {
+      display: block;
+      font-size: 10;
+      color: theme-color("gray1");
+    }
+    &-value {
+      display: block;
+      font-size: 20;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}

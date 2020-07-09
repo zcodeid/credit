@@ -3,7 +3,6 @@ import { FormatNumber } from "../../helpers";
 
 export default (props) => {
   const { tenors } = props;
-  console.log(tenors[0].installment);
   if (!tenors[0].installment) return null;
   return (
     <table className="table table-sm z-table px-5 table-hover">

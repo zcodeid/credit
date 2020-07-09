@@ -50,8 +50,8 @@ export default (props) => {
     for (let t of temp) {
       const total = (piutang * (100 + t.margin)) / 100;
       t.installment = Math.ceil(total / t.tenor / 1000) * 1000;
+      if (tenor == t.tenor) setInstallment(t.installment);
     }
-    console.log(temp);
     setTenors(temp);
   }, [dp, purchasePrice]);
   const selectInstallment = (o) => {
@@ -62,7 +62,11 @@ export default (props) => {
     <>
       <Nav />
       <div className="main-padding">
-        <InstallmentHighlight tenor={tenor} installment={installment} />
+        <InstallmentHighlight
+          tenor={tenor}
+          installment={installment}
+          piutang={purchasePrice - dp}
+        />
         <hr />
         <form className="px-2" onSubmit={submit}>
           <div className="form-group">
