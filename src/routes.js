@@ -3,7 +3,7 @@ import {
   IoLogoUsd,
   IoIosCart,
   IoIosContact,
-  IoIosPeople
+  IoIosPeople,
 } from "react-icons/io";
 import Login from "./pages/auth/login";
 import Home from "./pages/home/home";
@@ -48,6 +48,7 @@ export default [
     icon: IoIosHome,
     layer: 1,
     exact: true,
+    public: true,
     component: Home,
   },
   // {

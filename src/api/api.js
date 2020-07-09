@@ -8,6 +8,10 @@ const requestHandler = (request) => {
 };
 
 const errorHandler = (error) => {
+  if (error.response === undefined) {
+    toast.error("Tidak dapat terhubung ke API");
+    return;
+  }
   if (error.response.status === 403) window.location.href = "/login";
   toast.error(error.response.data.message);
   return Promise.reject({ ...error });
