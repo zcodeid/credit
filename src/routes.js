@@ -29,13 +29,14 @@ export default [
   { to: "/register", public: true, component: Register },
   { to: "/forgot-password", public: true, component: ForgotPassword },
   { to: "/forbidden", public: true, component: Forbidden },
-  { to: "/", public: true, component: Simulation },
+  { to: "/", public: true, exact: true, component: Simulation },
   {
     to: "/home",
     title: "Home",
     icon: IoIosHome,
     layer: 1,
     exact: true,
+    public: true,
     component: Home,
   },
   {

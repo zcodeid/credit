@@ -35,6 +35,7 @@ export default (props) => {
     const kelipatan = 10000;
     if (purchasePrice < 0)
       setPurchasePriceErr("Harga barang tidak boleh negative");
+    else setPurchasePriceErr("");
     if (dp < 0) setDpErr("DP tidak boleh negative");
     else if (dp % kelipatan !== 0)
       setDpErr("DP harus kelipatan Rp " + FormatNumber(kelipatan));

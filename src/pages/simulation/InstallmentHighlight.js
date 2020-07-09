@@ -20,7 +20,7 @@ export default (props) => {
         </span>
       </div>
       <div className="text-right">
-        <small className="crsi-highlight-label">Harga Barang - DP</small>
+        <small className="crsi-highlight-label">Total</small>
         <span className="crsi-highlight-value">
           Rp {FormatNumber(installment * tenor)}
         </span>
