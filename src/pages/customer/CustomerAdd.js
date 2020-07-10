@@ -1,36 +1,31 @@
 import React from "react";
 import NavTop from "../../component/navTop";
 import NumberFormat from "react-number-format";
+import { addCustomer } from "../../api/api";
+import ButtonLoading from "../../component/ButtonLoading";
 
 function CustomerAdd(props) {
   const [nik, setNik] = React.useState("");
-  const [nama, setNama] = React.useState("");
-  const [tanggal_lahir, setTanggalLahir] = React.useState("");
-  const [provinsi, setProvinsi] = React.useState("");
-  const [kabupaten, setKabupaten] = React.useState("");
-  const [kecamatan, setKecamatan] = React.useState("");
-  const [desa, setDesa] = React.useState("");
-  const [penghasilan, setPenghasilan] = React.useState("");
-  const [pengeluaran, setPengeluaran] = React.useState("");
-  const [alamat_lengkap, setAlamatLengkap] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [birthDate, setBirthDate] = React.useState("");
+  const [phone , setPhone] = React.useState("");
+  // const [provinsi, setProvinsi] = React.useState("");
+  // const [kabupaten, setKabupaten] = React.useState("");
+  // const [kecamatan, setKecamatan] = React.useState("");
+  // const [desa, setDesa] = React.useState("");
+  const [income, setIncome] = React.useState("");
+  const [spending, setSpending] = React.useState("");
+  const [address, setAddress] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-
-    const data = {
-      nik,
-      nama,
-      tanggal_lahir,
-      provinsi,
-      kabupaten,
-      kecamatan,
-      desa,
-      penghasilan,
-      pengeluaran,
-      alamat_lengkap,
-    };
-
-    console.table(data);
+    setLoading(true);
+    try {
+      await addCustomer({nik, name, phone, birthDate, address, income, spending});
+      window.history.back();
+    } catch (err){ console.log(err) }
+    setLoading(false);
   };
   return (
     <>
@@ -48,26 +43,36 @@ function CustomerAdd(props) {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="nama">Nama</label>
+            <label htmlFor="name">Nama</label>
             <input
               type="text"
               className="form-control"
               id="nama"
-              value={nama}
-              onChange={(e) => setNama(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="tanggal_lahir">Tanggal Lahir</label>
+            <label htmlFor="no_hp">No HP</label>
+            <input
+              type="text"
+              className="form-control"
+              id="no_hp"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="birthDate">Tanggal Lahir</label>
             <input
               type="date"
               className="form-control"
-              id="tanggal_lahir"
-              value={tanggal_lahir}
-              onChange={(e) => setTanggalLahir(e.target.value)}
+              id="birthDate"
+              value={birthDate}
+              onChange={(e) => setBirthDate(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="provinsi">Provinsi</label>
             <select
               name="provinsi"
@@ -118,14 +123,14 @@ function CustomerAdd(props) {
               <option value="">Pilih Desa</option>
               <option value="Tinggarjaya">Tinggarjaya</option>
             </select>
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="penghasilan">Penghasilan</label>
             <NumberFormat
               className="form-control"
               thousandSeparator={true}
               prefix={"Rp "}
-              onValueChange={(v) => setPenghasilan(v.floatValue)}
+              onValueChange={(v) => setIncome(v.floatValue)}
             />
           </div>
           <div className="form-group">
@@ -134,7 +139,7 @@ function CustomerAdd(props) {
               className="form-control"
               thousandSeparator={true}
               prefix={"Rp "}
-              onValueChange={(v) => setPengeluaran(v.floatValue)}
+              onValueChange={(v) => setSpending(v.floatValue)}
             />
           </div>
           <div className="form-group">
@@ -143,16 +148,22 @@ function CustomerAdd(props) {
               name="alamat_lengkap"
               id="alamat_lengkap"
               className="form-control"
-              value={alamat_lengkap}
-              onChange={(e) => setAlamatLengkap(e.target.value)}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             ></textarea>
           </div>
-          <button
-            className="btn btn-block btn-primary mt-3"
-            onClick={submitForm}
-          >
-            Simpan
-          </button>
+          {
+            loading ? (
+              <ButtonLoading />
+            ) : (
+              <button
+                className="btn btn-block btn-primary mt-3"
+                onClick={submitForm}
+              >
+                Simpan
+              </button>
+            )
+          }
         </form>
       </div>
     </>

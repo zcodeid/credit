@@ -40,6 +40,24 @@ export async function updateProfile(data) {
 export async function getTags() {
   return await axiosInstance.get("/cf/tag");
 }
+
+// Customer
+export async function getCustomer(){
+  return await axiosInstance.get("/people");
+}
+
+export async function addCustomer(data){
+  return await axiosInstance.post("/people", data)
+}
+
+export async function updateCustomer(nik, data){
+  return await axiosInstance.put(`/people/${nik}`, data)
+}
+
+export async function deleteCustomer(nik){
+  return await axiosInstance.delete(`/people/${nik}`);
+}
+
 // Init Axios
 const axiosInstance = axios.create({
   baseURL: "https://superapi.zcode.id",
