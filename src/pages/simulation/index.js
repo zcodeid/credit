@@ -5,8 +5,10 @@ import InstallmentTable from "./InstallmentTable";
 import InstallmentHighlight from "./InstallmentHighlight";
 import Ending from "../../component/Ending";
 
-const startTenor = 6;
-const startMargin = 20;
+let startTenor = 6;
+let startMargin = 30;
+let kenaikanMargin = 10;
+
 const initTenors = () => {
   const tn = [];
   for (let i = 1; i <= 7; i++) {
@@ -17,12 +19,13 @@ const initTenors = () => {
       margin = startMargin;
     } else {
       tenor = tn[i - 2].tenor + 3;
-      margin = tn[i - 2].margin + 5;
+      margin = tn[i - 2].margin + kenaikanMargin;
     }
     tn.push({ tenor, margin });
   }
   return tn;
 };
+
 export default (props) => {
   const [dp, setDp] = React.useState(0);
   const [dpErr, setDpErr] = React.useState("");
