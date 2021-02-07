@@ -5,22 +5,15 @@ import InstallmentTable from "./InstallmentTable";
 import InstallmentHighlight from "./InstallmentHighlight";
 import Ending from "../../component/Ending";
 
-let startTenor = 6;
-let startMargin = 30;
-let kenaikanMargin = 10;
+let startTenor = 2;
+let startMargin = 17;
+let kenaikanMargin = 3.5;
 
 const initTenors = () => {
   const tn = [];
-  for (let i = 1; i <= 7; i++) {
-    let tenor = 0;
-    let margin = 0;
-    if (tn.length === 0) {
-      tenor = startTenor;
-      margin = startMargin;
-    } else {
-      tenor = tn[i - 2].tenor + 3;
-      margin = tn[i - 2].margin + kenaikanMargin;
-    }
+  for (let i = 0; i <= 10; i++) {
+    let tenor = startTenor + i;
+    let margin = startMargin + kenaikanMargin * i + 1 * i;
     tn.push({ tenor, margin });
   }
   return tn;
