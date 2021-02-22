@@ -4,8 +4,8 @@
     "userPoolId": "ap-southeast-1_GgOsKkw4X",
     "userPoolWebClientId": "35arkvtj29lnm9e6p8bqcai0v4",
     "mandatorySignIn": true,
-    "redirectSignIn": "http://localhost:3030",
-    "redirectSignOut": "http://localhost:3030"
+    "redirectSignIn": "http://localhost:3000",
+    "redirectSignOut": "http://localhost:3000"
   },
   "API": {
     "endpoints": [
