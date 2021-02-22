@@ -1,0 +1,14 @@
+{
+    "userPoolId": "ap-southeast-1_GgOsKkw4X",
+    "userPoolWebClientId": "XXX",
+    "region": "ap-southeast-1",
+    "identityPoolId": "eu-west-2:XXX",
+    "identityPoolRegion": "eu-west-2",
+    "mandatorySignIn": false,
+    "aws_project_region": "eu-west-2",
+    "aws_cognito_identity_pool_id": "eu-west-2:XXX",
+    "aws_cognito_region": "eu-west-2",
+    "aws_user_pools_id": "eu-west-2_ikgbLyfwt",
+    "aws_user_pools_web_client_id": "XXX",
+    "oauth": {}
+  }

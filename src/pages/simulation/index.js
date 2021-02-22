@@ -4,6 +4,7 @@ import { FormatNumber } from "../../helpers";
 import InstallmentTable from "./InstallmentTable";
 import InstallmentHighlight from "./InstallmentHighlight";
 import Ending from "../../component/Ending";
+import { Auth } from "aws-amplify";
 
 let startTenor = 2;
 let startMargin = 17;
@@ -17,6 +18,11 @@ const initTenors = () => {
     tn.push({ tenor, margin });
   }
   return tn;
+};
+
+const login = (e) => {
+  e.preventDefault();
+  Auth.federatedSignIn();
 };
 
 export default (props) => {
@@ -85,6 +91,9 @@ export default (props) => {
             <small className="form-text text-danger">{dpErr}</small>
           </div>
         </form>
+        <div className="mx-2">
+          <button className="btn btn-success btn-block" onClick={login}>Mulai Gunakan</button>
+        </div>
         <div className="mx-4">
           <InstallmentTable tenors={tenors} onClick={selectInstallment} />
         </div>

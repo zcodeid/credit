@@ -1,0 +1,13 @@
+{
+    "domain": "auth.zcode.id",
+    "scope": [
+      "phone",
+      "email",
+      "profile",
+      "openid",
+      "aws.cognito.signin.user.admin"
+    ],
+    "redirectSignIn": "http://localhost:3030",
+    "redirectSignOut": "http://localhost:3030",
+    "responseType": "code"
+  }

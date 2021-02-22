@@ -1,0 +1,18 @@
+{
+  "Auth": {
+    "region": "ap-southeast-1",
+    "userPoolId": "ap-southeast-1_GgOsKkw4X",
+    "userPoolWebClientId": "35arkvtj29lnm9e6p8bqcai0v4",
+    "mandatorySignIn": true,
+    "redirectSignIn": "http://localhost:3030",
+    "redirectSignOut": "http://localhost:3030"
+  },
+  "API": {
+    "endpoints": [
+      {
+        "name": "v1",
+        "endpoint": "https://afc9n41cb5.execute-api.ap-southeast-1.amazonaws.com/dev"
+      }
+    ]
+  }
+}
