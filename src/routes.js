@@ -5,7 +5,6 @@ import {
   IoIosContact,
   IoIosPeople,
 } from "react-icons/io";
-import Login from "./pages/auth/login";
 import Home from "./pages/home/home";
 import Customer from "./pages/customer/Customer";
 import CustomerAdd from "./pages/customer/CustomerAdd";
@@ -17,17 +16,12 @@ import Penjualan from "./pages/penjualan/Penjualan";
 import PenjualanAdd from "./pages/penjualan/PenjualanAdd";
 import PenjualanEdit from "./pages/penjualan/PenjualanEdit";
 import Account from "./pages/account/account";
-import Register from "./pages/auth/register";
-import ForgotPassword from "./pages/auth/ForgotPassword";
 import Forbidden from "./pages/others/Forbidden";
 import ChangePassword from "./pages/account/ChangePassword";
 import EditProfile from "./pages/account/EditProfile";
 import Simulation from "./pages/simulation";
 
 export default [
-  { to: "/login", public: true, component: Login },
-  { to: "/register", public: true, component: Register },
-  { to: "/forgot-password", public: true, component: ForgotPassword },
   { to: "/forbidden", public: true, component: Forbidden },
   { to: "/", public: true, exact: true, component: Simulation },
   {
