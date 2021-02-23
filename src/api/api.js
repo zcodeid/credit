@@ -12,7 +12,7 @@ const errorHandler = (error) => {
     toast.error("Tidak dapat terhubung ke API");
     return;
   }
-  if (error.response.status === 403) window.location.href = "/";
+  // if (error.response.status === 403) window.location.href = "/";
   toast.error(error.response.data.message);
   return Promise.reject({ ...error });
 };

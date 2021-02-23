@@ -21,6 +21,9 @@ import ChangePassword from "./pages/account/ChangePassword";
 import EditProfile from "./pages/account/EditProfile";
 import Simulation from "./pages/simulation";
 
+import ProductCategory from "./pages/productCategory/ProductCategory";
+import ProductCategoryAdd from "./pages/productCategory/ProductCategoryAdd";
+
 export default [
   { to: "/forbidden", public: true, component: Forbidden },
   { to: "/", public: true, exact: true, component: Simulation },
@@ -101,5 +104,15 @@ export default [
   {
     to: "/account/change-password",
     component: ChangePassword,
+  },
+  {
+    to: "/product-category",
+    component: ProductCategory,
+    exact: true
+  },
+  {
+    to: "/product-category/add",
+    component: ProductCategoryAdd,
+    exact: true
   },
 ];
